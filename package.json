@@ -9,7 +9,7 @@
   },
   "scripts": {
     "start": "npx vite",
-    "predeploy": "npx vite build",
+    "predeploy": "npx vite build && xcopy /e /y src dist\\src\\",
     "deploy": "gh-pages -d dist"
   }
 }

@@ -1,3 +1,3 @@
 export default {
-  base: "/capybara/"
+  base: "/CSE160_Assignment_2/"
 }
