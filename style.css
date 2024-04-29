@@ -1,0 +1,25 @@
+table {
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+}
+
+#settings {
+  text-align: left;
+}
+
+#settings label {
+  font-size: 24px;
+}
+
+#settings input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+}
+
+#settings input[type="number"] {
+  height: 24px;
+  font-size: 18px;
+}

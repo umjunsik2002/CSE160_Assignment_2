@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Capybara</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+  <body>
+    <table>
+      <tr>
+        <td>
+          <canvas id="c" width="800" height="800"></canvas>
+        </td>
+        <td id="settings">
+          <table>
+            <tr>
+              <td>
+                <label>Animation:</label>
+                <input type="checkbox" id="animation" checked>
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Grid:</label>
+                <input type="checkbox" id="grid">
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <label>Slider:</label>
+                <input type="range" id="orange" min="0" max="16" value="1">
+                <input type="number" id="orangeValue" min="0" max="16" value="1">
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+    <script type="module" src="./index.js"></script>
+    <script>
+      const orangeRange = document.getElementById('orange');
+      const orangeValue = document.getElementById('orangeValue');
+      function checkValue(value) {
+        const parsedValue = parseInt(value);
+        return isNaN(parsedValue) ? 0 : Math.min(Math.max(parsedValue, 0), 16);
+      }
+      function updateValue(input, range) {
+        input.value = checkValue(parseInt(input.value));
+        range.value = input.value;
+      }
+      orangeValue.addEventListener('change', function() {
+        updateValue(this, orangeRange);
+      });
+      orangeRange.addEventListener('input', function() {
+        updateValue(this, orangeValue);
+      });
+    </script>
+  </body>
+</html>
